@@ -1,1 +1,0 @@
-# gallent-Jiraiya.github.io

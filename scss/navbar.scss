@@ -1,0 +1,158 @@
+$navBackClr:#1d1e22;
+$navFontClr:#d4d4dc;
+$navUnderClr: #f7bb25;
+$navFontSize:2.5vh;
+$logoHeight:12vh;
+$backgroundClr:#21242c;
+$navBackClr:#1d1e22;
+$greenBack:#299748;
+$scrollColor:rgb(236,158,35);
+
+#container{
+	margin-top: $logoHeight;
+}
+.topnav{
+	z-index: 5;
+	position:fixed;
+	box-sizing: border-box;
+	height:$logoHeight;
+	top:0;
+	width:100%;
+	padding:0 5%;
+	overflow:hidden;
+	background-color:$navBackClr;
+	transition: 1s;
+    #items{
+		float:right;
+		display:flex;	
+		height:$logoHeight ;
+		justify-content: center;
+		align-items: center;	
+		
+		.itm{	
+			font-family:Raleway, sans-serif;
+			font-size:$navFontSize;
+			padding:15px 1rem;
+			text-decoration:none;
+			color: $navFontClr;
+			font-weight:700;
+			box-sizing: border-box;
+			
+		}
+		.itm::after{
+			content: '';
+			display: block;
+			position:relative;
+			bottom: 0;
+			left: 5%;
+			width:20px;
+			height:2px;
+			transition: 0.5s;
+			background-color:$navUnderClr;
+		}
+		
+		.itm:hover{
+			&::after{
+				width: 40px;
+			}
+		}	
+	}
+	#logo{
+		float:left;
+		position: absolute;
+		img{
+			height:$logoHeight;
+		}
+	}
+}
+@media only screen and (min-width: 850px) and (max-width:4000px){
+	.topnav #items{
+		.itm{
+			display:BLOCK ;
+		}
+		.icon{
+			display: none;
+		}	
+	}
+}
+@media only screen and (max-width: 950px){
+	.topnav #items{
+		.itm{
+			display:none ;
+		}
+		.icon{
+			display: block;
+			.icn-bars{
+				width:19.981px
+			}
+		}
+		a::after{
+			background-color: rgba(0,0,0,0);
+		}
+	}
+	.topnavresponsive{
+		z-index: 5;
+		position:fixed;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		height:max-content;
+		top:0;
+		width:100%;
+		padding:0 5%;
+		overflow:hidden;
+		background-color:$navBackClr;
+		transition: 0.2s;
+		-webkit-transition: 0.2s;
+		-moz-transition: 0.2s;
+		#items{
+			float:left;
+			display:flex;
+			flex-direction: column;	
+			.icon{
+				position: absolute;
+				display: flex;
+				right:5%;
+				top:0;
+				box-sizing: border-box;
+				height: $logoHeight;
+				.icn-bars{
+					width:19.981px
+				}
+			}
+			.itm{
+				box-sizing: border-box;
+				font-family:Raleway, sans-serif;
+				font-size:$navFontSize;
+				padding:10px 1rem;
+				text-decoration:none;
+				color: $navFontClr;
+				font-weight:700;
+				&::after{
+					content: '';
+					display: block;
+					position:relative;
+					bottom: 0;
+					left: 0;
+					width:0;
+					height:2px;
+					transition: 0.5s;
+					background-color:$navUnderClr;
+				}
+			}
+			
+			.itm:hover{
+				&::after{
+					width:30px;
+				}
+			}	
+		}
+		#logo{
+			float:left;
+			img{
+				height:$logoHeight;
+			}
+		}
+  	}
+	
+}

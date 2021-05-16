@@ -1,0 +1,218 @@
+$scrollColor:rgb(236,158,35);
+$scrollInactiveColor:rgba(142,143,145,1);
+$greenBack:rgba(37,40,42,1);
+#timeline{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 50px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    .active{
+        display: grid;
+        animation: 0.5s ease 0s forwards 1 pulse;
+        border-color: $scrollColor  !important;
+    }
+    .icon{
+        box-sizing: border-box;
+        display: grid;
+        z-index: 2;
+        justify-items:center;
+        align-items: center;
+        grid-column: 2/3;
+        margin-top:2.5vh;
+        width: 45px;
+        height: 45px;
+        border: solid 5px $scrollInactiveColor;
+        border-radius: 50px;
+        background-color: blue;  
+        transition: 0.3s ease ; 
+             
+        img{
+        width:30px;
+        height:30px;
+        
+        }
+        @keyframes pulse {
+            0% {
+              transform: scale(1,1);
+            }
+            50% {
+              transform: scale(1.3,1.3);
+            }
+            100% {
+              transform: scale(1,1);
+            }
+          }
+    }
+    #icn1{
+        grid-row: 1/2;
+        //animation: 2s ease 0s forwards 1 pulse;
+    }
+    #icn2{
+        grid-row: 2/3;
+    }
+    #icn3{
+        grid-row: 3/4;
+    }
+    #icn4{
+        grid-row: 4/5;
+    }
+    #icn5{
+        grid-row: 5/6;
+    }
+    #icn6{
+        grid-row: 6/7;
+    }
+}
+#scroll{
+    grid-row:1/7;
+    grid-column: 2/3;
+    justify-self:center;
+    content: '';
+    width: 10px;
+    margin-top:5vh;
+    //max-height: 90%;
+    background-color: $scrollInactiveColor;
+}
+#scrollbar{
+    grid-row:1/7;
+    grid-column: 2/3;
+    justify-self:center;
+    position:relative;
+    margin-top:5vh;
+    width: 10px;
+    background-color: $scrollColor;
+    //max-height: 80%;
+    overflow:hidden;
+    border-radius: 10px;
+ 
+}
+.bx{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    min-height:20vh;
+    background-color: $greenBack;
+    justify-content: center;
+    //border-radius: 10px;
+    //box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
+    position: relative;
+    
+}
+.bx:nth-child(odd){
+    &:before {
+        content: '';
+        align-self:flex-end;
+		position: relative;
+		left:34px;
+        top: 20px;
+		border: 7px solid transparent;
+		border-left: 7px solid $greenBack;
+    }
+}
+.bx:nth-child(even){
+    &:before {
+		content: '';
+        align-self: baseline;
+		position: relative;
+		right:34px;
+        top: 20px;
+		border: 7px solid transparent;
+		border-right: 7px solid $greenBack;
+	}
+}
+.dte{
+    justify-self:start;
+    align-self: start;
+    margin-top:25px;
+}
+.dte:nth-child(even){
+    justify-self: end;
+    
+}
+#box1{
+    grid-row:1/2;
+    grid-column: 1/2;
+}
+#box2{
+    grid-row:2/3;
+    grid-column: 3/4;
+}
+#box3{
+    grid-row:3/4;
+    grid-column: 1/2;
+}
+#box4{
+    grid-row:4/5;
+    grid-column: 3/4;
+}
+#box5{
+    grid-row:5/6;
+    grid-column: 1/2;
+}
+#box6{
+    grid-row:6/7;
+    grid-column: 3/4;
+}
+@media (max-width: 768px) {//tablet view
+    #timeline{
+        grid-template-columns: 50px 1fr;
+        grid-gap: 10px;
+
+        #scroll {
+            grid-column: 1/2;
+        }
+        #scrollbar{
+            grid-column: 1/2;
+        }
+        .icon{
+            grid-column: 1/2;
+        }
+        .bx{
+            grid-column: 2/3;
+            padding-bottom: 25px;
+        }
+        .bx:nth-child(odd){
+            &::before {
+                content: '';
+                align-self: flex-start;
+                position: relative;
+                right: 34px !important;
+                left: auto;
+                border: 7px solid transparent;
+                border-right: 7px solid $greenBack;    
+            }
+        }
+        .dte{
+            align-self:flex-end ;
+            margin-bottom: 5px;
+            margin-left: 20px;
+            grid-column: 2/3; 
+        }
+        .dte:nth-child(even){
+            justify-self: start;
+            
+        }
+        #D1{
+            grid-row: 1/2;
+        }
+        #D2{
+            grid-row: 2/3;
+        }
+        #D3{
+            grid-row: 3/4;
+        }
+        #D4{
+            grid-row: 4/5;
+        }
+        #D5{
+            grid-row: 5/6;
+        }
+        #D6{
+            grid-row: 6/7;
+        }
+    }
+}
+@media  (max-width: 576px) {//mobile view
+
+}
