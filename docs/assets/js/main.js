@@ -22,16 +22,38 @@ var swiper = new Swiper('.swiper-container', {
     disableOnInteraction:false,
   },
 });
+var controller = new ScrollMagic.Controller();
+var tl1 = new TimelineMax();
+tl1.from("#team-1 .before ",.5,{y:-300,opacity:0,ease:Power1.easeOut},0).from("#team-1 .after ",.5,{y:300,opacity:0,ease:Power1.easeOut},0);
+var scene1 = new ScrollMagic.Scene({
+    triggerElement: "#team-1"
+})
+.setTween(tl1)
+.addTo(controller);
+var tl2 = new TimelineMax();
+tl2.from("#team-2 .before ",.5,{y:-300,opacity:0,ease:Power1.easeOut},0).from("#team-2 .after ",.5,{y:300,opacity:0,ease:Power1.easeOut},0);
+var scene2 = new ScrollMagic.Scene({
+    triggerElement: "#team-2"
+})
+.setTween(tl2)
+.addTo(controller);
+var tl3 = new TimelineMax();
+tl3.from("#team-3 .before ",.5,{y:-300,opacity:0,ease:Power1.easeOut},0).from("#team-3 .after ",.5,{y:300,opacity:0,ease:Power1.easeOut},0);
+var scene3 = new ScrollMagic.Scene({
+    triggerElement: "#team-3"
+})
+.setTween(tl3)
+.addTo(controller);
+var tl4 = new TimelineMax();
+tl4.from("#team-4 .before ",.5,{y:-300,opacity:0,ease:Power1.easeOut},0).from("#team-4 .after ",.5,{y:300,opacity:0,ease:Power1.easeOut},0);
+var scene4 = new ScrollMagic.Scene({
+    triggerElement: "#team-4"
+})
+.setTween(tl4)
+.addTo(controller);
+
 !(function($) {
   "use strict";
-  /*$(document).ready(function(){
-    $(".cor-slider").owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        autoplayHoverPause: true
-    });
-})*/
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

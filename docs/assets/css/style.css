@@ -1881,7 +1881,7 @@ color: #c09710;
 }
 @media (max-width: 425px) {
   .cor-double{
-    width: 80%;
+    width:100%;
     flex-direction: column;
   }
   .par{
@@ -1889,18 +1889,18 @@ color: #c09710;
     margin: 0;
   }
 }
-.cor-cards::after{
+.after{
   content: ' ';
-  background-color: #18d26e;
+  background-color: #c09710;
   width: 2px;
   height: 100%;
   position: absolute;
   top: -10vw;
   left: 100%;
 }
-.cor-cards::before{
+.before{
   content: ' ';
-  background-color: #18d26e;
+  background-color: #c09710;
   width: 2px;
   height: 100%;
   position: absolute;
