@@ -24,7 +24,14 @@ var swiper = new Swiper('.swiper-container', {
 });
 !(function($) {
   "use strict";
-
+  /*$(document).ready(function(){
+    $(".cor-slider").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true
+    });
+})*/
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
