@@ -1,6 +1,6 @@
 $backgroundClr:rgb(20, 20, 20);
 $navBackClr:#1d1e22;
-$greenBack:rgba(37,40,42,1);
+$greenBack:rgba(37,40,42,0.6);
 $scrollColor:rgb(236,158,35);
 h1,h2,h3,h4{
 	color:rgb(236,158,35);
@@ -13,7 +13,8 @@ body{
     margin: 0;
     padding: 0;
 	color: #ffffff;
-    background-color: $backgroundClr;
+    background-image:url('/docs/img/background.gif');
+	background-attachment: fixed;
 	box-sizing: border-box;
 	font-size: 2.5vh;
 	font-weight: 300;
@@ -58,7 +59,6 @@ body{
 		transition: 0.2s;
 		&:hover{
 			background-color: rgb(202, 135, 28);
-			transform:matrix(1.05,0,0,1.05,0,0) !important;
 		}
 	}
 }
