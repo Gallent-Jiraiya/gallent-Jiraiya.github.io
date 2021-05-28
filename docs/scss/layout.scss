@@ -1,6 +1,6 @@
 $backgroundClr:rgb(20, 20, 20);
 $navBackClr:#1d1e22;
-$greenBack:rgba(37,40,42,0.6);
+$greenBack:rgba(37, 40, 42, 0.363);
 $scrollColor:rgb(236,158,35);
 h1,h2,h3,h4{
 	color:rgb(236,158,35);
@@ -13,8 +13,7 @@ body{
     margin: 0;
     padding: 0;
 	color: #ffffff;
-    background-image:url('../img/background.gif');
-	background-attachment: fixed;
+    background-color: rgb(236, 236, 236);
 	box-sizing: border-box;
 	font-size: 2.5vh;
 	font-weight: 300;
@@ -101,7 +100,9 @@ body{
 		padding-left:2% ;
 		align-items: center;
 		justify-content: center;
-		
+		p{
+			color: #0a0a0a;
+		}
 	}
 }
 #winners {
