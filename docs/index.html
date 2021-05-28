@@ -72,11 +72,6 @@
           <li><a href="https://www.facebook.com/groups/expositionentrepreneurialclub" target="_blank">EEC</a></li>
           <li class="buy-tickets"  ><a href="https://www.magazine.exposition.lk" target="_blank">E - Magazine</a></li>
           <li><a href="#footer">Contact</a></li>
-         
-       
-          
-          
-         
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -132,26 +127,26 @@
     <!-- ======= Gallery Section ======= -->
     
     <section id="gallery" >
-      <div class="container" >
         <div class="section-header">
           <h2>Gallery</h2>
           <p>Exposition Magazine - issue 15 Launching Ceremony</p>
-          
         </div>
-      </div>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/1.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/2.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/3.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/4.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/5.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/6.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/7.jpg)"></div>
-          <div class="swiper-slide" style="background-image:url(assets/img/gallery/8.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/1.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/1.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/2.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/2.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/3.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/3.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/4.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/4.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/5.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/5.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/6.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/6.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/7.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/7.jpg)"></div>
+          <div onclick="ShowImage('assets/img/gallery/8.jpg')" class="swiper-slide" style="background-image:url(assets/img/gallery/8.jpg)"></div>
         </div>
       </div>
-      
+      <div id="ImageViewer">
+        <img id="gal-img">
+        <img id="close-window" onclick="document.getElementById('ImageViewer').style.display = 'none'" src="assets/img/close.png">
+      </div>
 </div>
       <!--div class="container" >
         <div class="section-header">

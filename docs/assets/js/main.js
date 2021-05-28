@@ -52,6 +52,18 @@ var scene4 = new ScrollMagic.Scene({
 .setTween(tl4)
 .addTo(controller);
 
+let viewer=document.getElementById('ImageViewer');
+let img=document.getElementById('gal-img');
+function ShowImage(path){
+  viewer.style.display= "flex";
+  img.src=path;
+  var tl5 = new TimelineMax();
+  tl5.from(viewer,.5,{opacity:0,ease:Power1.easeOut},0);
+  var scene5 = new ScrollMagic.Scene({})
+  .setTween(tl5)
+  .addTo(controller);
+}
+
 !(function($) {
   "use strict";
   // Back to top button
