@@ -536,7 +536,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   padding-top: -200px;
   padding-bottom: 500px;
-  margin-top: 100px;
+  margin-top: 15vh;
   position: relative;
 }
 
@@ -1947,7 +1947,8 @@ color: #c09710;
     font-size: 3vw !important;
   }
   .btns img{
-    width: 3vw !important;
+    width: 2vw !important;
+    height: 2vw !important;
   }
 }
 @media (max-width: 425px) {
@@ -1960,7 +1961,8 @@ color: #c09710;
     margin: 0;
   }
   .btns img{
-    width: 7vw !important;
+    width: 4vw !important;
+    height: 4vw !important;
   }
 }
 .after{
@@ -2018,9 +2020,9 @@ color: #c09710;
 }
 .btns img
 {
-    width: 30px;
+    width: 1.5vw;
+    height: 1.5vw ;
     background: #ffffff00;
-    border-radius: 30px;
 }
 .owl-nav
 {
