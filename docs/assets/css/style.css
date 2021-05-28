@@ -5,7 +5,7 @@
 --------------------------------------------------------------*/
 body {
   background:   #030A11;
-  color: gold;
+  color: #f7bb25;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -137,7 +137,9 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #header {
   height: 15vh;
-  background: #023047;
+  background-image:url('/assets/img/nav-back.png');
+  background-position: center;
+  background-size: cover;
   padding: 25px ;
   position: fixed;
   left: 0;
@@ -145,11 +147,29 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 5;
+  overflow: hidden;
+}
+#header-back{
+  position:absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 15vh;
+  padding: 25px ;
+  background-color:#0008149d;
+}
+.header-scrolled #header-back{
+  height: 75px;
+  padding: 15px 0;
+  transition: all 0.5s;
+
 }
 
 @media (max-width: 991px) {
   #header {
-    background: #023047;
+    background-image:url('/assets/img/nav-back.png');
+    background-position: center;
+    background-size: cover;
     height: 15vh;
     padding: 15px 0;
     transition: all 0.5s;
@@ -164,7 +184,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled, #header.header-fixed {
-  background: #023047;
+  background-image:url('/assets/img/nav-back.png');
+  background-position: center;
+  background-size: cover;
   height: 75px;
   padding: 15px 0;
   transition: all 0.5s;
@@ -291,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0px;
   text-decoration: none;
   display: inline-block;
-  color: #c09710;
+  color: #f7bb25;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -322,7 +344,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 3px;
   bottom: -10px;
   left: 0;
-  background-color: #c09710;
+  background-color: #f7bb25;
   visibility: hidden;
   transition: all 0.3s ease-in-out 0s;
 }
@@ -339,7 +361,7 @@ h1, h2, h3, h4, h5, h6 {
   background:#ac8e09;
   padding: 7px 22px;
   border-radius: 50px;
-  border: 2px solid #e6c300;
+  border: 2px solid #f7bb25;
   transition: all ease-in-out 0.3s;
   font-weight: 500;
    margin-left: 8px;
@@ -379,7 +401,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li:hover > a {
-  background: #e6c300;
+  background: #f7bb25;
   color: #fff;
 }
 
@@ -452,7 +474,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul li a:hover {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #mobile-nav ul li li {
@@ -469,11 +491,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #mobile-nav ul .menu-item-active {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #mobile-body-overly {
@@ -805,7 +827,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers .speaker .details a:hover {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #speakers .speaker:hover .details {
@@ -840,7 +862,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #speakers-details .details .social a:hover {
-  background: #e6c300;
+  background: #f7bb25;
   color: #fff;
 }
 
@@ -902,7 +924,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .nav-tabs a.active {
-  background-color: #e6c300;
+  background-color: #f7bb25;
   color: #fff;
 }
 
@@ -1082,7 +1104,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #hotels a:hover {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #hotels .stars {
@@ -1165,8 +1187,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
 /*#gallery .owl-nav, #gallery .owl-dots {
@@ -1326,7 +1348,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #faq #faq-list a.collapse {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #faq #faq-list a.collapsed {
@@ -1389,7 +1411,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 0;
   padding: 9px 25px;
   cursor: pointer;
-  background: #e6c300;
+  background: #f7bb25;
   color: #fff;
   transition: all 0.3s ease;
   outline: none;
@@ -1398,7 +1420,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #subscribe button:hover {
-  background: #e6c300;
+  background: #f7bb25;
 }
 
 @media (max-width: 460px) {
@@ -1454,13 +1476,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 50px;
   padding: 10px 40px;
   transition: all 0.2s;
-  background-color: #e6c300;
+  background-color: #f7bb25;
   border: 0;
   color: #fff;
 }
 
 #buy-tickets .card .btn:hover {
-  background-color: #e6c300;
+  background-color: #f7bb25;
 }
 
 #buy-tickets #buy-ticket-modal input, #buy-tickets #buy-ticket-modal select {
@@ -1472,13 +1494,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 50px;
   padding: 10px 40px;
   transition: all 0.2s;
-  background-color: #e6c300;
+  background-color: #f7bb25;
   border: 0;
   color: #fff;
 }
 
 #buy-tickets #buy-ticket-modal .btn:hover {
-  background-color: #e6c300;
+  background-color: #f7bb25;
 }
 
 /*--------------------------------------------------------------
@@ -1497,7 +1519,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #contact .contact-info address, #contact .contact-info p {
@@ -1518,7 +1540,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .contact-info a:hover {
-  color: #e6c300;
+  color: #f7bb25;
 }
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
@@ -1540,7 +1562,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .php-email-form .validate {
   display: none;
-  color: #e6c300;
+  color: #f7bb25;
   margin: 0 0 15px 0;
   font-weight: 400;
   font-size: 13px;
@@ -1549,7 +1571,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #e6c300;
+  background: #f7bb25;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1591,7 +1613,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .php-email-form input::focus, #contact .php-email-form textarea::focus {
-  background-color: #e6c300;
+  background-color: #f7bb25;
 }
 
 #contact .php-email-form input {
@@ -1603,7 +1625,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .php-email-form button[type="submit"] {
-  background: #e6c300;
+  background: #f7bb25;
   border: 0;
   padding: 10px 40px;
   color: #fff;
@@ -1613,7 +1635,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .php-email-form button[type="submit"]:hover {
-  background: #e6c300;
+  background: #f7bb25;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1768,7 +1790,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
-  background: #e6c300;
+  background: #f7bb25;
   border: 0;
   width: 35%;
   padding: 6px 0;
@@ -1779,7 +1801,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"]:hover {
-  background: #e6c300;
+  background: #f7bb25;
 }
 
 #footer .copyright {
@@ -1854,17 +1876,29 @@ color: #c09710;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color:#0008149d;
+  }
+#topic{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
 }
-#team{
+#team-the{
+  font-weight: 400;
+}
+.team{
   font-size: 36px;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 700 ;
-  margin: 5% 0 10% 0;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 .cor-slider{
   height: 100%;
-  width: 90%;;
+  width: 70%;;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1889,7 +1923,7 @@ color: #c09710;
 .cor-double{
   width: 50%;
   display: flex;
-  margin-right: 5%;
+  margin-right: 7%;
   align-items: center;
   margin-bottom: 17%;
 }
@@ -1898,7 +1932,7 @@ color: #c09710;
     flex-direction: column;
   }
   .cor-double{
-    width: 80%;
+    width: 60%;
   }
   
   .cor-cards::after{
@@ -1910,7 +1944,10 @@ color: #c09710;
     top: 2.5vw;
   }
   .hed{
-    font-size: 5vw !important;
+    font-size: 3vw !important;
+  }
+  .btns img{
+    width: 3vw !important;
   }
 }
 @media (max-width: 425px) {
@@ -1921,6 +1958,9 @@ color: #c09710;
   .par{
     font-size: 4vw !important;
     margin: 0;
+  }
+  .btns img{
+    width: 7vw !important;
   }
 }
 .after{
@@ -1962,12 +2002,12 @@ color: #c09710;
 }
 .hed{
   color: rgb(240, 240, 240);
-  font-size: 2rem;
+  font-size: 2vw;
   font-weight: 500;
   margin: 0;
 }
 .par{
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   margin: 0;
 }
 .messages{
@@ -1998,7 +2038,10 @@ color: #c09710;
 
 /*testimonial*/
 #testimonial{
-  background-color: rgb(34, 34, 34);
+  background-image: url(/assets/img/nav-back.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   padding: 0 !important;
   width: 100%;
   margin: 0;
