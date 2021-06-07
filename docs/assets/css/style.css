@@ -1877,6 +1877,7 @@ color: #c09710;
   flex-direction: column;
   align-items: center;
   background-color:#0008149d;
+  margin-top: 5%;
   }
 #topic{
   display: flex;
@@ -1920,8 +1921,15 @@ color: #c09710;
 .cor-cards:nth-child(even){
   top: 5vw;
 }
+.cor-single{
+  width: 20%;
+}
+#team-5{
+  top:-10vw;
+  width: 100%;
+}
 .cor-double{
-  width: 50%;
+  width: 40%;
   display: flex;
   margin-right: 7%;
   align-items: center;
@@ -1933,6 +1941,13 @@ color: #c09710;
   }
   .cor-double{
     width: 60%;
+  }
+  .cor-single{
+    width: 100%;
+  }
+  #team-5{
+    width: 30%;
+    margin: 50px auto 0 25%;
   }
   
   .cor-cards::after{
@@ -1955,6 +1970,15 @@ color: #c09710;
   .cor-double{
     width:100%;
     flex-direction: column;
+  }
+  .cor-single{
+    width: 100%;
+    margin-right: 7%;
+  }
+  #team-5{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
   }
   .par{
     font-size: 4vw !important;
@@ -2004,12 +2028,12 @@ color: #c09710;
 }
 .hed{
   color: rgb(240, 240, 240);
-  font-size: 2vw;
+  font-size: 1.8vw;
   font-weight: 500;
   margin: 0;
 }
 .par{
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin: 0;
 }
 .messages{

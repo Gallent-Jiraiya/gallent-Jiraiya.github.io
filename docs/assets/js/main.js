@@ -51,6 +51,14 @@ var scene4 = new ScrollMagic.Scene({
 })
 .setTween(tl4)
 .addTo(controller);
+var tl5 = new TimelineMax();
+tl5.from("#team-5 .before ",.5,{y:-300,opacity:0,ease:Power1.easeOut},0).from("#team-5 .after ",.5,{y:300,opacity:0,ease:Power1.easeOut},0);
+var scene5 = new ScrollMagic.Scene({
+    triggerElement: "#team-5"
+})
+.setTween(tl5)
+.addTo(controller);
+
 
 let viewer=document.getElementById('ImageViewer');
 let img=document.getElementById('gal-img');
