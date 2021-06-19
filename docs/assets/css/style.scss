@@ -868,27 +868,41 @@ body {
   --------------------------------------------------------------*/
   #sponsors {
     padding: 50px 0;
+    
   }
-  
-  #sponsors .sponsors-wrap {
-    border-top: 1px solid #e0e5fa;
-    border-left: 1px solid #e0e5fa;
-    margin-bottom: 30px;
-  }
-  
+
   #sponsors .sponsor-logo {
     padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #e0e5fa;
-    border-bottom: 1px solid #e0e5fa;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.5);
-    height: 160px;
+    min-height: 160px;
   }
-  
-  #sponsors .sponsor-logo:hover img {
+  .logo-box{
+    border: 1px solid #e0e5fa;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+  }
+  @media (max-width: 600px){
+    .sponsor-logo{
+      flex-direction: column;
+    }
+  }
+
+  .sponsor-logo img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: auto;
+    
+  }
+  .sponsor-logo img:hover {
     transform: scale(1.2);
   }
   
