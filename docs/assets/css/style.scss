@@ -375,7 +375,7 @@ body {
   .nav-menu li.buy-tickets a {
     color: #fff;
     font-weight:bold ;
-    background:#ac8e09;
+    background:#f7bb25;
     padding: 7px 22px;
     border-radius: 50px;
     border: 2px solid #f7bb25;
@@ -882,12 +882,23 @@ body {
   }
   .logo-box{
     border: 1px solid #e0e5fa;
-    height: 160px;
+    height: 200px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 400px;
+    .logo-img{
+      min-height: 75%;
+      display: flex;
+      align-items: center;
+    }
+    P{
+      color: #000000;
+      font-size:22px;
+      justify-self: flex-end;
+    }
   }
+  
   @media (max-width: 600px){
     .sponsor-logo{
       flex-direction: column;
