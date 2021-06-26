@@ -286,19 +286,21 @@ else{
   let icn5=document.getElementById('icn5');
   let icn6=document.getElementById('icn6');
   //var  =  document.getElementById('timeline').getBoundingClientRect().top+window.pageYOffset;
-  let DistanceToTop=icn1.getBoundingClientRect().top+window.pageYOffset;
-  let LastIconToTop=icn6.getBoundingClientRect().top+window.pageYOffset;
-  let DevHeight=window.innerHeight;
-  var maxHeight=(LastIconToTop-DistanceToTop);
-  window.onload=function(){
-      scrol.style.maxHeight=(maxHeight)+"px";
-      progress.style.height=(1)+"px";
-  }
+  
+     
   window.onscroll=function(){
+    let DistanceToTop=icn1.getBoundingClientRect().top+window.pageYOffset;
+    let LastIconToTop=icn6.getBoundingClientRect().top+window.pageYOffset;
+    let DevHeight=window.innerHeight;
+    var maxHeight=(LastIconToTop-DistanceToTop);
+        scrol.style.maxHeight=(maxHeight)+"px";
+        progress.style.height=(1)+"px";
       let progressHeight=(window.pageYOffset-DistanceToTop)+DevHeight*4/5;
-      if(maxHeight>progressHeight){
+      if(maxHeight>=progressHeight){
       progress.style.height=(progressHeight)+"px";
-      
+      }
+      else{
+        progress.style.height=(maxHeight)+"px";
       }
   }
 
