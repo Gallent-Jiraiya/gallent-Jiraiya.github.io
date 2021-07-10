@@ -31,6 +31,7 @@ function mobNav() {
     $('#autoWidth').lightSlider({
         autoWidth:true,
         loop:true,
+        auto:true,
         onSliderLoad: function() {
             $('#autoWidth').removeClass('cS-hidden');
         } 
@@ -38,10 +39,10 @@ function mobNav() {
   });
 //end of about slider animation  
 var navBackColor = new TimelineMax();
-navBackColor.to(".topnav",0.01,{transform:"scale3d(2)",backgroundColor:"rgba(29,30,34,0.95)",color:"white",ease:Power1.easeOut});
+navBackColor.to(".topnav",0.01,{transform:"scale3d(2)",backgroundColor:"rgba(29,30,34,0.99)",color:"white",ease:Power1.easeOut});
 var sceneNavBackColor = new ScrollMagic.Scene({
     triggerElement: "#sect2",
-    triggerHook:0
+    triggerHook:0.9
 })
 .setTween(navBackColor)
 .addTo(controller);
