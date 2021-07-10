@@ -503,6 +503,7 @@ body{
 	}
 	#crew{
 		min-height:63vh;
+		height: auto;
 		width: 55%;
 		padding-right:5%;
 		display: flex;
@@ -516,14 +517,13 @@ body{
 		}
 		.box{
 			width: 15.8vw;
-			height: 50vh;
+			min-height: 50vh;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-between;
 			box-sizing: border-box;
 			margin: 20px 0.5px;
-			background-color: rgba(206, 32, 32, 0.4);
 			//border-radius: 10px;
 			box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
 			.person{
@@ -535,7 +535,16 @@ body{
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				width:15.8vw;
+				justify-content: center;
+				text-align: center;
+				width:100%;
+				padding: 10px;
+				h4{
+					font-size: 1.3rem;
+				}
+				p{
+					font-size: 1rem;
+				}
 			}
 		}
 		.box:hover{
