@@ -286,12 +286,13 @@ else{
   let icn4=document.getElementById('icn4');
   let icn5=document.getElementById('icn5');
   let icn6=document.getElementById('icn6');
+  let icn7=document.getElementById('icn7');
   //var  =  document.getElementById('timeline').getBoundingClientRect().top+window.pageYOffset;
   
      
   window.onscroll=function(){
     let DistanceToTop=icn1.getBoundingClientRect().top+window.pageYOffset;
-    let LastIconToTop=icn6.getBoundingClientRect().top+window.pageYOffset;
+    let LastIconToTop=icn7.getBoundingClientRect().top+window.pageYOffset;
     let DevHeight=window.innerHeight;
     var maxHeight=(LastIconToTop-DistanceToTop);
         scrol.style.maxHeight=(maxHeight)+"px";
@@ -312,12 +313,15 @@ var tl3 = new TimelineMax();
 var tl4 = new TimelineMax();
 var tl5 = new TimelineMax();
 var tl6 = new TimelineMax();
+var tln7 = new TimelineMax();
+
 tl.from("#box1",0.5,{right:15,opacity:0},0).from("#D1",0.5,{x:20,opacity:0},0);
 tl2.from("#box2",0.5,{left:15,opacity:0},0).from("#D2",0.5,{x:-20,opacity:0},0);
 tl3.from("#box3",0.5,{right:15,opacity:0},0).from("#D3",0.5,{x:20,opacity:0},0);
 tl4.from("#box4",0.5,{left:15,opacity:0},0).from("#D4",0.5,{x:-20,opacity:0},0);
 tl5.from("#box5",0.5,{right:15,opacity:0},0).from("#D5",0.5,{x:20,opacity:0},0);
 tl6.from("#box6",0.5,{left:15,opacity:0},0).from("#D6",0.5,{x:-20,opacity:0},0);
+tln7.from("#box7",0.5,{right:15,opacity:0},0).from("#D7",0.5,{x:20,opacity:0},0);
        
 var scene1 = new ScrollMagic.Scene({
                      triggerElement: "#icn1",
@@ -360,6 +364,13 @@ var scene6 = new ScrollMagic.Scene({
                 })
                 .setClassToggle("#icn6", "active")
                 .setTween(tl6)
+                .addTo(controller);
+var scenetl7 = new ScrollMagic.Scene({
+                    triggerElement: "#icn7",
+                    triggerHook: 0.8
+                })
+                .setClassToggle("#icn7", "active")
+                .setTween(tln7)
                 .addTo(controller);
 /******end of timeline animations************/
           

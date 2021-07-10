@@ -6,7 +6,7 @@ h1,h2,h3,h4{
 	color:rgb(236,158,35);
 }
 p{
-	font-size: 1.3vw;
+	font-size: 20px;
 }
 html{
 	text-size-adjust:100%;
@@ -74,7 +74,7 @@ body{
 		width:50%;
 		overflow: hidden;
 		box-sizing: border-box;
-		height: 80vh;
+		min-height: 80vh;
 		.swiper-container {
 			width: 100%;
 			height:100%;
@@ -100,17 +100,17 @@ body{
 		flex-direction: column;
 		text-align: center;
 		width:50%;
-		height:80vh;
+		min-height:80vh;
 		margin-left:2% ;
-		padding: 10px 15px;
+		padding: 20px 20px;
 		align-items: center;
 		justify-content: center;
 		h1{
-			font-size: 4vw;
+			font-size: 50px;
 		}
 		p{
 			color: #0a0a0a;
-			font-size: 1.5vw;
+			font-size: 20px;
 			font-weight: 400;
 		}
 	}
@@ -120,6 +120,7 @@ body{
 	width:90%;
 	margin-left: 5%;
 	margin-bottom: 25px;
+	margin-top: 25px;
 	overflow: hidden;
 	//box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
   
@@ -263,12 +264,11 @@ body{
 #steps{
 	display: flex;
 	box-sizing: border-box;
-	-webkit-box-sizing:border-box;
 	width:90%;
-	//overflow: hidden;
+	overflow: hidden;
 	margin-bottom: 25px;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: auto;
+	margin-right: auto;
 }
 .topic{
 	width: 100%;
@@ -278,6 +278,7 @@ body{
 	font-size: 40px;
 	font-weight:600;
 	margin: 40px 0;
+	text-align: center;
 	text-transform: uppercase;
 }
 .steps3{
@@ -288,8 +289,7 @@ body{
 }
 .step{
 	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	padding: 2% 3%;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -363,18 +363,15 @@ body{
 	justify-content: center;
 	align-items: center;
 	width:90%;
-	margin-left: 5%;
+	margin: 20px 5%;
 	height:10vh;
-	margin-bottom: 15px;
+	font-size: 20px;
 	
 	a{
 		text-decoration: none;
 		background-color: rgb(236,158,35);
-		padding: 10px 15px;
+		padding: 15px;
 		color: #0a0a0a;
-		//border-radius: 10px;
-		//border:2px solid rgb(255, 0, 0);
-		//box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
 		transition: 0.2s;
 		&:hover{
 			background-color: rgb(202, 135, 28);
@@ -404,6 +401,7 @@ body{
 .award{
 	box-sizing: border-box;
 	margin: 2px;
+	margin-bottom: 20px;
 	height: 50vh;
 	width: 33.33%;
 	transition: 1s;
@@ -447,7 +445,7 @@ body{
 	.partner{
 		box-sizing: border-box;
 		margin: 15px 3%;
-		width: 30%;
+		width: 22%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -460,15 +458,16 @@ body{
 			align-items: center;
 			min-height:15vw ;
 			transition: 500ms;
+			width: 100%;
 		}
 		img{
-			max-width: 100%;
+			width: 100%;
 		}
 		h4{
 			margin-top: 10px;
 			color:black;
 			justify-self: flex-end;
-			
+			font-size: 1.5vw;
 		}
 	}
 	.partner:hover{
@@ -481,6 +480,7 @@ body{
 	margin-top: 25px;;
 	background-color:$navBackClr;
 	display: flex;
+	font-size: 18px;
 	#about{
 		display: flex;
 		flex-direction: column;
@@ -488,19 +488,21 @@ body{
 		box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		margin: 5px 5%;
+		padding: 40px 0;
 		min-height:63vh;
 		width:45%;
 	}
 	#uok{
 		display: flex;
 		justify-content: center;
+		margin-top: 25px;
 		img{
 			width: 40%;
 		}
 
 	}
 	#crew{
-		height:63vh;
+		min-height:63vh;
 		width: 55%;
 		padding-right:5%;
 		display: flex;
@@ -548,6 +550,48 @@ body{
 			-webkit-transition: all ease 0.3s;
 			-moz-transition: all ease 0.3s;
 		}
+	}
+}
+#social{
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	.soc-img{
+		margin: 8px 10px;
+		height: 45px;
+		width: 45px;
+		border: solid 2px #000000;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 500ms;
+		svg{
+			width: 20px;
+			height: auto;
+			transition: 500ms;
+		}
+		&:hover{
+			border-color: #0D749F;
+			transform: scale(1.15);
+			svg{
+				fill:#0D749F;
+			}
+		}
+	}
+}
+#footer{
+	width: 100%;
+	background-color: #000000;
+	height: 12vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	p{
+		margin-bottom: 0;
+		font-size: 18px;
 	}
 }
 @media  (max-width: 576px) {//mobile view
