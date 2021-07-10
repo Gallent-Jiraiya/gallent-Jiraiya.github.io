@@ -38,7 +38,7 @@ function mobNav() {
   });
 //end of about slider animation  
 var navBackColor = new TimelineMax();
-navBackColor.to(".topnav",0.01,{transform:"scale3d(1.1)",backgroundColor:"rgba(29,30,34,0.95)",color:"white",ease:Power1.easeOut});
+navBackColor.to(".topnav",0.01,{transform:"scale3d(2)",backgroundColor:"rgba(29,30,34,0.95)",color:"white",ease:Power1.easeOut});
 var sceneNavBackColor = new ScrollMagic.Scene({
     triggerElement: "#sect2",
     triggerHook:0
@@ -179,6 +179,7 @@ else{
     })
     .setTween(tl9)
     .addTo(controller);
+
     var tl12 = new TimelineMax();
     var tl13 = new TimelineMax();
     var tl14 = new TimelineMax();
@@ -362,3 +363,82 @@ var scene6 = new ScrollMagic.Scene({
                 .addTo(controller);
 /******end of timeline animations************/
           
+/****Partners Animations*********/
+    var tl23 = new TimelineMax();
+    var tl24 = new TimelineMax();
+    var tl25 = new TimelineMax();
+    var tl26 = new TimelineMax();
+    var tl27 = new TimelineMax();
+    var tl28 = new TimelineMax();
+    tl23.from(["#partn1"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tl24.from(["#partn2"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tl25.from(["#partn3"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tl26.from(["#partn4"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tl27.from(["#partn5"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tl28.from(["#partn6"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    var scene23 = new ScrollMagic.Scene({
+        triggerElement: "#partn1",
+        triggerHook: 0.8
+    })
+    .setTween(tl23)
+    .addTo(controller);
+    var scene24 = new ScrollMagic.Scene({
+        triggerElement: "#partn2",
+        triggerHook: 0.8
+    })
+    .setTween(tl24)
+    .addTo(controller);
+    var scene25 = new ScrollMagic.Scene({
+        triggerElement: "#partn3",
+        triggerHook: 0.8
+    })
+    .setTween(tl25)
+    .addTo(controller);
+    var scene26 = new ScrollMagic.Scene({
+        triggerElement: "#partn4",
+        triggerHook: 0.8
+    })
+    .setTween(tl26)
+    .addTo(controller);
+    var scene27 = new ScrollMagic.Scene({
+        triggerElement: "#partn5",
+        triggerHook: 0.8
+    })
+    .setTween(tl27)
+    .addTo(controller);
+    var scene28 = new ScrollMagic.Scene({
+        triggerElement: "#partn6",
+        triggerHook: 0.8
+    })
+    .setTween(tl28)
+    .addTo(controller);
+    
+
+/****End of Partners Animations*********/
+/****Awards Animations*********/
+var tl29 = new TimelineMax();
+var tl30 = new TimelineMax();
+var tl31 = new TimelineMax();
+tl29.from(["#award-1"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+tl30.from(["#award-2"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+tl31.from(["#award-3"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+var scene29 = new ScrollMagic.Scene({
+    triggerElement: "#award-1",
+    triggerHook: 0.8
+})
+.setTween(tl29)
+.addTo(controller);
+var scene30 = new ScrollMagic.Scene({
+    triggerElement: "#award-2",
+    triggerHook: 0.8
+})
+.setTween(tl30)
+.addTo(controller);
+var scene31 = new ScrollMagic.Scene({
+    triggerElement: "#award-3",
+    triggerHook: 0.8
+})
+.setTween(tl31)
+.addTo(controller);
+
+/****End of Awards Animations*********/

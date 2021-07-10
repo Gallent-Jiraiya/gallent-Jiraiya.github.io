@@ -1,16 +1,13 @@
-$navBackClr:#1d1e22;
 $navFontClr:#d4d4dc;
 $navUnderClr: #f7bb25;
 $navFontSize:2.5vh;
 $logoHeight:12vh;
 $backgroundClr:#21242c;
-$navBackClr:#1d1e22;
+$navBackClr:#ffffff00;
 $greenBack:#299748;
 $scrollColor:rgb(236,158,35);
 
-#container{
-	margin-top: $logoHeight;
-}
+
 .topnav{
 	z-index: 5;
 	position:fixed;
@@ -103,8 +100,6 @@ $scrollColor:rgb(236,158,35);
 		overflow:hidden;
 		background-color:$navBackClr;
 		transition: 0.2s;
-		-webkit-transition: 0.2s;
-		-moz-transition: 0.2s;
 		#items{
 			float:left;
 			display:flex;
