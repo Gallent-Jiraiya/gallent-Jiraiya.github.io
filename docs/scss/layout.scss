@@ -612,6 +612,13 @@ body{
 		padding: 40px 0;
 		min-height:63vh;
 		width:45%;
+		svg{
+			width: 18px;
+		}
+		a{
+			text-decoration: none;
+			margin-bottom: 20px;
+		}
 	}
 	#uok{
 		display: flex;
@@ -665,7 +672,7 @@ body{
 					font-size: 1.5rem;
 				}
 				p{
-					font-size: 1.1rem;
+					font-size: 1rem;
 					margin-bottom: 0;
 				}
 				.links{
@@ -729,8 +736,9 @@ body{
 }
 #footer{
 	width: 100%;
+	padding: 5px 8px;
 	background-color: #000000;
-	height: 12vh;
+	min-height: 12vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -878,6 +886,9 @@ body{
 				height: 240px;
 			}
 		}
+	}
+	#social{
+		flex-direction: column;
 	}
 	#cards{
 		flex-direction: column;
