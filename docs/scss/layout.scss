@@ -84,7 +84,7 @@ body{
 				}
 			}
 			#vid{
-				display: none;
+				
 				margin: 2% 0 2% 3%;
 				width: 90%;
 			}
@@ -759,6 +759,19 @@ body{
 	}
 }
 @media  (max-width: 576px) {//mobile view
+	#social{
+		right: 5px;
+		bottom: 10px;
+	.soc-img{
+		height: 30px;
+		width: 30px;
+		svg{
+			width: 10px;
+			height: auto;
+			transition: 500ms;
+		}
+	}
+}
 	#banner1{
 		flex-direction: column;
 		#intro{
