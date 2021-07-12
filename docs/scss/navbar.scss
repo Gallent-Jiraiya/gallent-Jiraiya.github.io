@@ -25,7 +25,22 @@ $scrollColor:rgb(236,158,35);
 		height:$logoHeight ;
 		justify-content: center;
 		align-items: center;	
-		
+		#Jr{
+			background-color: #ffffff;
+			font-family:Raleway, sans-serif;
+			font-size:$navFontSize;
+			padding:15px 2rem;
+			text-decoration:none;
+			color: #2bbfcc;
+			font-weight:800;
+			margin: 0 20px;
+			box-sizing: border-box;
+			transition: 500ms;
+			&:hover{
+				background-color: #299748;
+				color: #ffffff;
+			}
+		}
 		.itm{	
 			font-family:Raleway, sans-serif;
 			font-size:$navFontSize;
@@ -67,6 +82,9 @@ $scrollColor:rgb(236,158,35);
 		.itm{
 			display:BLOCK ;
 		}
+		#Jr{
+			display: block;
+		}
 		.icon{
 			display: none;
 		}	
@@ -76,6 +94,9 @@ $scrollColor:rgb(236,158,35);
 	.topnav #items{
 		.itm{
 			display:none ;
+		}
+		#Jr{
+			display: none;
 		}
 		.icon{
 			display: block;
@@ -113,6 +134,24 @@ $scrollColor:rgb(236,158,35);
 				height: $logoHeight;
 				.icn-bars{
 					width:19.981px
+				}
+			}
+			#Jr{
+				min-width: 50%;
+				align-self: center;
+				background-color: #ffffff;
+				font-family:Raleway, sans-serif;
+				font-size:$navFontSize;
+				padding:15px 2rem;
+				text-decoration:none;
+				color: #2bbfcc;
+				font-weight:800;
+				margin: 0 0 20px 0;
+				box-sizing: border-box;
+				transition: 500ms;
+				&:hover{
+					background-color: #299748;
+					color: #ffffff;
 				}
 			}
 			.itm{

@@ -1,6 +1,6 @@
 $backgroundClr:rgb(20, 20, 20);
 $navBackClr:#1d1e22;
-$greenBack:#0D749F;
+$greenBack:#414749;
 $scrollColor:rgb(236,158,35);
 h1,h2,h3,h4{
 	font-family:Open Sans;
@@ -362,10 +362,47 @@ body{
 }
 #things{
 	display: flex;
+	flex-direction: column;
 	overflow: hidden;
 	width: 90%;
 	margin-left: 5%;
 	margin-bottom: 5px;
+	text-align: center;
+	p{
+		font-size: 30px;
+		color: #0D749F;
+		font-weight: 400;
+		transition: 500ms;
+		span{
+			color: #f7bb25;
+			font-weight: 800;
+		}	
+		&:hover{
+			font-size: 31px;
+		}
+	}
+}
+#thingsTopic{
+	p{
+		font-size: 40px;
+	}
+	p span.cursor {
+		display: inline-block;
+		background-color: #ccc;
+		margin-left: 0.1rem;
+		width: 3px;
+		animation: blink 1s infinite;
+	}
+	cursor.typing {
+		animation: none;
+	}
+	@keyframes blink {
+		0%  { background-color: #ccc; }
+		49% { background-color: #ccc; }
+		50% { background-color: transparent; }
+		99% { background-color: transparent; }
+		100%  { background-color: #ccc; }
+	}
 }
 .things3{
 	width:50%;

@@ -43,8 +43,8 @@ function mobNav() {
 var navBackColor = new TimelineMax();
 navBackColor.to(".topnav",0.01,{transform:"scale3d(2)",backgroundColor:"rgba(29,30,34,0.99)",color:"white",ease:Power1.easeOut});
 var sceneNavBackColor = new ScrollMagic.Scene({
-    triggerElement: "#sect2",
-    triggerHook:0.9
+    triggerElement: "#hack",
+    triggerHook:0.1
 })
 .setTween(navBackColor)
 .addTo(controller);
@@ -456,3 +456,59 @@ var scene31 = new ScrollMagic.Scene({
 .addTo(controller);
 
 /****End of Awards Animations*********/
+var tl32 = new TimelineMax();
+tl32.to(["#social"],.5,{opacity:0,ease:Power1.easeOut},0);
+var scene32 = new ScrollMagic.Scene({
+    triggerElement: "#sect2",
+    triggerHook: 0.9
+})
+.setTween(tl32)
+.addTo(controller);
+
+/** Things to remember***/
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = [
+"Things to remember", 
+];
+
+const typingDelay = 90;
+const erasingDelay = 0;
+const newTextDelay = 400; // Delay between current and next text
+
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if ( !cursorSpan.classList.contains("typing") ) 
+      cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-200);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
