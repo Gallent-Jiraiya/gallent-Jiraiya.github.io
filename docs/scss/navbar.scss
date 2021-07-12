@@ -1,6 +1,6 @@
 $navFontClr:#d4d4dc;
 $navUnderClr: #f7bb25;
-$navFontSize:3vh;
+$navFontSize:18px;
 $logoHeight:13vh;
 $backgroundClr:#21242c;
 $navBackClr:#ffffff00;
@@ -90,7 +90,7 @@ $scrollColor:rgb(236,158,35);
 		}	
 	}
 }
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 1024px){
 	.topnav #items{
 		.itm{
 			display:none ;
