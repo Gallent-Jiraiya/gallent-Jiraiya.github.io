@@ -347,14 +347,17 @@ body{
 	overflow: hidden;
 	//box-shadow: 2px 5px 8px rgba(0,0,0,0.5);
 	h1{
-		font-size: 4vh;
+		font-size: 5vh;
 		padding-bottom: 2vh;
 		font-weight: 800;
 	}
 	h2{
 		font-weight: 750;
-		font-size: 4vh;
+		font-size: 3vh;
 		padding-bottom: 1vh;
+	}
+	p{
+		font-size: 16px;
 	}
 }
 #things{
@@ -545,7 +548,8 @@ body{
 			margin-top: 10px;
 			color:black;
 			justify-self: flex-end;
-			font-size: 1.5vw;
+			font-size: 1.2vw;
+			font-weight: 700;
 		}
 	}
 	.partner:hover{
@@ -573,9 +577,9 @@ body{
 	#uok{
 		display: flex;
 		justify-content: center;
-		margin-top: 25px;
+		margin-top: 40px;
 		img{
-			width: 40%;
+			width: 30%;
 		}
 
 	}
@@ -654,11 +658,12 @@ body{
 	}
 }
 #social{
+	z-index: 10;
 	display: flex;
-	flex-direction: column;
-	position:absolute;
+	flex-direction: row;
+	position:fixed;
 	right: 15px;
-	bottom: 15px;
+	bottom: 10px;
 	.soc-img{
 		margin: 8px 10px;
 		height: 35px;
@@ -690,6 +695,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	p{
 		margin-bottom: 0;
 		font-size: 15px;
@@ -754,6 +760,15 @@ body{
 	}
 	.step{
 		width: 100%;
+		h1{
+			font-size: 25px;
+		}
+		h2{
+			font-size: 24px;
+		}
+		p{
+			font-size: 20px;
+		}
 	}
 	#things{
 		flex-direction: column;
@@ -804,6 +819,9 @@ body{
 			.partner{
 				width: 80%;
 				margin-bottom: 25px;
+				h4{
+					font-size: 4vw !important;
+				}
 			}
 		}
 	}
@@ -834,6 +852,9 @@ body{
 	}
 	.step{
 		min-height:60vh ;
+		p{
+			font-size: 18px;
+		}
 	}
 	#steps{
 		flex-direction: column;
@@ -886,6 +907,11 @@ body{
 			p{
 				text-align:center ;
 			}
+		}
+	}
+	.partner{
+		h4{
+			font-size: 1.5vw !important;
 		}
 	}
 	#aboutus{

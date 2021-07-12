@@ -21,7 +21,9 @@ var swiper = new Swiper('.swiper-container', {
 function mobNav() {
     var x = document.getElementById("navbar");
     if (x.className === "topnav") {
+        x.style.backgroundColor="rgba(29,30,34,0.99)";
       x.className += "responsive";
+
     } else {
       x.className = "topnav";
     }
