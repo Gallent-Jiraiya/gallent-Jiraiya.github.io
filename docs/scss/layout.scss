@@ -73,7 +73,7 @@ body{
 				}
 			}
 			#vid{
-				
+				display: none;
 				margin: 2% 0 2% 3%;
 				width: 90%;
 			}
@@ -97,6 +97,7 @@ body{
 	}
 	.btn{
 		margin-top: 5vh;
+		text-decoration: none;
 		color: azure;
 		background-color: $scrollColor;
 		border: none;
@@ -464,6 +465,7 @@ body{
 		}
 	}
 	.icon{
+		display: none;
 		margin-left: 10px;
 		width: 25px;
 		height: 25px;
@@ -511,7 +513,7 @@ body{
 
 #award-1{
 	h4,h2{
-		color:#f8960c;
+		color:rgb(230, 178, 75);
 		font-weight: 700;
 	}
 	&:hover{
