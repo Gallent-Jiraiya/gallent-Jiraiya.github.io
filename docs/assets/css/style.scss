@@ -312,7 +312,7 @@ body {
     float: left ;
     margin: 0;
     
-    margin-left: 0%;
+    margin-right: 5%;
   }
   
   @media (max-width: 1280px) {
@@ -1228,6 +1228,9 @@ body {
     .hed{
       font-size: 3vw !important;
     }
+    .par{
+      font-size: 2vw !important;
+    }
     .btns img{
       width: 2vw !important;
       height: 2vw !important;
@@ -1250,6 +1253,9 @@ body {
       width: 50%;
       margin: 0 auto;
       margin-top: 50px;
+    }
+    .hed{
+      font-size: 5vw !important;
     }
     .par{
       font-size: 4vw !important;
@@ -1304,12 +1310,12 @@ body {
   }
   .hed{
     color: rgb(240, 240, 240);
-    font-size: 1.8vw;
+    font-size: 1.8vw ;
     font-weight: 500;
     margin: 0;
   }
   .par{
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     margin: 0;
   }
   .messages{
