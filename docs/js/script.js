@@ -517,3 +517,13 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
+/** End of Things to remember***/
+let imgs=document.getElementsByClassName('award-img');
+for (var i = 0; i < imgs.length; i++) {
+    imgs[i].style.height = imgs[i].style.width;
+}
+let uokimgs=document.getElementsByClassName('uok-img');
+for (var i = 0; i < uokimgs.length; i++) {
+    uokimgs[i].style.height = uokimgs[i].style.width;
+}
+    

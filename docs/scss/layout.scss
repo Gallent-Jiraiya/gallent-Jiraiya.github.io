@@ -518,8 +518,7 @@ body{
 		width: 100%;
 		img{
 			width: 50%;
-			height: auto;
-			max-height: 250px;
+			
 		}
 	}
 }
@@ -919,7 +918,12 @@ body{
 			}
 		}
 	}
-	
+	.price-img{
+		img{
+			width: 50%;
+			
+		}
+	}
 	#cards{
 		flex-direction: column;
 	}
