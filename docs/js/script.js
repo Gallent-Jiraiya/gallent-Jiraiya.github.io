@@ -520,13 +520,12 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 /** End of Things to remember***/
 let imgs=document.getElementsByClassName('award-img');
 for (var i = 0; i < imgs.length; i++) {
-let imgs=document.getElementsByClassName('award-img');
-    imgs[i].style.height = imgs[i].clientWidth;
-    console.log(imgs[i].clientWidth);
+    imgs[i].style.height = imgs[i].clientWidth +'px';
+    
 }
 let uokimgs=document.getElementsByClassName('uok-img');
 for (var i = 0; i < uokimgs.length; i++) {
-    uokimgs[i].style.height = uokimgs[i].clientWidth;
-    console.log(uokimgs[i].clientWidth);
+    uokimgs[i].style.height = uokimgs[i].clientWidth +'px';
+    
 }
     
