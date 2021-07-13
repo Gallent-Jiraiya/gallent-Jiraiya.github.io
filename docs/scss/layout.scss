@@ -501,6 +501,7 @@ body{
 	margin-bottom: 20px;
 	min-height: 50vh;
 	width: 33.33%;
+	height: auto;
 	transition: 1s;
 	.price{
 		display: flex;
@@ -636,6 +637,7 @@ body{
 		margin-top: 40px;
 		img{
 			width: 30%;
+			height: auto;
 		}
 
 	}
@@ -720,11 +722,12 @@ body{
 	position:fixed;
 	right: 15px;
 	bottom: 10px;
+	
 	.soc-img{
 		margin: 8px 10px;
 		height: 35px;
 		width: 35px;
-		border: solid 2px #000000;
+		border: solid 2px #ffffff;
 		border-radius: 50%;
 		display: flex;
 		justify-content: center;
@@ -734,6 +737,7 @@ body{
 			width: 15px;
 			height: auto;
 			transition: 500ms;
+			fill: #ffffff;
 		}
 		&:hover{
 			border-color: #ec9e23;
@@ -760,18 +764,21 @@ body{
 }
 @media  (max-width: 576px) {//mobile view
 	#social{
-		right: 5px;
-		bottom: 10px;
-	.soc-img{
-		height: 30px;
-		width: 30px;
+		z-index: 1;
+		position: relative;
+		display: flex !important;
+		flex-direction: row !important;
+		opacity: 1 !important;
+		margin-top:20px ;
+		justify-content: center;	
+		align-items: center;
 		svg{
-			width: 10px;
-			height: auto;
-			transition: 500ms;
+			fill: #ffffff;
+		}	
+		.soc-img{
+			border: solid 2px #ffffff;
 		}
 	}
-}
 	#banner1{
 		flex-direction: column;
 		#intro{
@@ -910,9 +917,7 @@ body{
 			}
 		}
 	}
-	#social{
-		flex-direction: column;
-	}
+	
 	#cards{
 		flex-direction: column;
 	}

@@ -292,7 +292,7 @@ else{
   let icn7=document.getElementById('icn7');
   //var  =  document.getElementById('timeline').getBoundingClientRect().top+window.pageYOffset;
   
-     
+  let devWidth;
   window.onscroll=function(){
     let DistanceToTop=icn1.getBoundingClientRect().top+window.pageYOffset;
     let LastIconToTop=icn7.getBoundingClientRect().top+window.pageYOffset;
@@ -456,15 +456,19 @@ var scene31 = new ScrollMagic.Scene({
 .addTo(controller);
 
 /****End of Awards Animations*********/
-/**** Social icons Animations*****/
-var tl32 = new TimelineMax();
-tl32.to(["#social"],.5,{opacity:0, display:"none",ease:Power1.easeOut},0);
-var scene32 = new ScrollMagic.Scene({
-    triggerElement: "#sect2",
-    triggerHook: 0.9
-})
-.setTween(tl32)
-.addTo(controller);
+/**** Social icons Animations*****/    
+        var tl32 = new TimelineMax();
+        tl32.to(["#social"],.5,{opacity:0, display:"none",ease:Power1.easeOut},0);
+        var scene32 = new ScrollMagic.Scene({
+            triggerElement: "#sect2",
+            triggerHook: 0.9
+        })
+        .setTween(tl32)
+        .addTo(controller);
+    
+
+    
+
 /**** End of Social icons Animations*****/
 /** Things to remember***/
 const typedTextSpan = document.querySelector(".typed-text");
