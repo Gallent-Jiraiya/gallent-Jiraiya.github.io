@@ -543,6 +543,56 @@ body {
   /*--------------------------------------------------------------
   # Intro Section
   --------------------------------------------------------------*/
+   /* styles for modal */
+
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 50; /* Sit on top */
+          //padding-top: 10px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          overflow-y: hidden;
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          }
+  
+          
+          /* Modal Content */
+          .modal-content {
+          background-color: #020f1f;
+          margin: auto;
+          padding: 0px;
+          width: 33%;
+          height: 100vh;
+          }
+          @media (max-width: 1023px){
+            .modal-content{
+              width: 100%;
+            }
+          }
+  
+          /* The Close Button */
+          .modalClose {
+          height: min-content;
+          color: #aaaaaa;
+          position:absolute;
+          right:0;
+          margin-right: 5%;
+          font-size: 28px;
+          font-weight: bold;
+          }
+  
+          .modalClose:hover,
+          .modalClose:focus {
+          color: #64625d;
+          text-decoration: none;
+          cursor: pointer;
+          }
   #intro {
     width: 100%;
     height: calc(100vh - 75px);
@@ -705,13 +755,15 @@ body {
     line-height: 1;
     margin: 10px;
     color: #fff;
+    background-color: #00000000;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
     border: 2px solid #c09710;
+
   }
   
   #intro .about-btn:hover {
-    background: #c09710;
+    background-color: #c09710 !important;
     color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: 800;
