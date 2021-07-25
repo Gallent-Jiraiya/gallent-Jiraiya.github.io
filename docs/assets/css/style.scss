@@ -746,16 +746,16 @@ body {
   #intro .about-btn {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 17px;
     letter-spacing: 1px;
     display: inline-block;
-    padding: 12px 32px;
-    border-radius: 50px;
+    padding: 15px 39px;
+    border-radius: 30px;
     transition: 0.5s;
     line-height: 1;
     margin: 10px;
     color: #fff;
-    background-color: #00000000;
+    background-color: #0000009a;
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
     border: 2px solid #c09710;
@@ -765,7 +765,7 @@ body {
   #intro .about-btn:hover {
     background-color: #c09710 !important;
     color: rgb(0, 0, 0);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 800;
     border:3px solid black;
   }
