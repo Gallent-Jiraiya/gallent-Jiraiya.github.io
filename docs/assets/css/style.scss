@@ -1,16 +1,25 @@
 
-
+#loader{
+  min-width:100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body, html{
     height: 100vh;
+    
 }
 body {
     background:   #030A11;
     color: #f7bb25;
     font-family: "Open Sans", sans-serif;
     margin: 0;
+    overflow: hidden;
   }
   html {
     scroll-behavior: smooth;
@@ -596,10 +605,10 @@ body {
   #intro {
     width: 100%;
     height: calc(100vh - 75px);
-    background: url(../img/intro.jpeg) center;
+    /*background: url(../img/intro.jpeg) center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center;*/
     overflow: hidden;
     margin-top: 75px;
     position: relative;

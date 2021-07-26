@@ -1,3 +1,4 @@
+
 /**
 * Template Name: TheEvent - v2.0.0
 * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
@@ -272,4 +273,9 @@ $(window).click(function(event) {
     modal.style.display = "none";
   }
 });
+$(window).on('load', function () {  
+  $("#loader").fadeOut("slow");  
+  $("#loader").css("display","none");
+  $("body").css("overflow","auto");
+});  
 })(jQuery);
