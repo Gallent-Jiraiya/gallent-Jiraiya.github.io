@@ -1,0 +1,80 @@
+#award-topic{
+  margin: 60px auto;
+  color: #cda45e;
+
+  h1{
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+#awards{
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	display: flex;
+  @media screen and (max-width:480px) {
+    flex-direction: column;
+    .award{
+      width: 100%;
+      margin: 50px 0 !important;
+    }
+    #award-2 .award-img{
+      content: url('../img/awards/price1-01.webp');
+    }
+    #award-1 .award-img{
+      content: url('../img/awards/prices2-01.webp');
+    }
+  }
+}
+.award{
+	box-sizing: border-box;
+	margin: 2px;
+	margin-bottom: 20px;
+	
+	width: 33.33%;
+	height: auto;
+	transition: 1s;
+	
+	.price-img{
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		img{
+			width:70%;
+			
+		}
+	}
+}
+
+#award-1{
+	h4,h2{
+		color:rgb(230, 178, 75);
+		font-weight: 700;
+	}
+	&:hover{
+		text-shadow: 2px 2px 5px #fdbc62;
+	}
+}
+#award-2{
+  margin-top: 80px;
+	h4,h2{
+		color:#7e7676;
+		font-weight: 700;
+	}
+	&:hover{
+		text-shadow: 2px 2px 5px #c9c9c9;
+	}
+}
+#award-3{
+  margin-top: 80px;
+	h4,h2{
+		color:#f07625;
+		font-weight: 700;
+	}
+	&:hover{
+		text-shadow: 2px 2px 5px #f69c62;
+	}
+}
