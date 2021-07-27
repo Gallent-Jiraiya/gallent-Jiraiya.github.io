@@ -273,9 +273,10 @@ $(window).click(function(event) {
     modal.style.display = "none";
   }
 });
-$(window).on('load', function () {  
+/*$(window).on('load', function () {  
   $("#loader").fadeOut("slow");  
   $("#loader").css("display","none");
   $("body").css("overflow","auto");
-});  
+});  */
+
 })(jQuery);

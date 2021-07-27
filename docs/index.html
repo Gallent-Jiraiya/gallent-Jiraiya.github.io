@@ -49,10 +49,10 @@
 
 </head>
 
-<body>
-  <div id="loader">
-    <iframe id="load"  style="width: 100%; scrollbar-width: none; height: 100vh; "src="loader.html" frameborder="0"></iframe>
-  </div>
+<body id="bdy">
+  <!--div id="loader">
+    <iframe  style="width: 100%; scrollbar-width: none; height: 100vh; "src="loader.html" frameborder="0"></iframe>
+  </div-->
   
   <div id="page">
   <!-- ======= Header ======= -->
@@ -502,7 +502,20 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 </div>
+<!--script>
+  var myVar;
 
+function loaderFunc() {
+  
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("page").style.display = "block";
+  document.getElementById("bdy").style.overflow = "auto";
+}
+</script-->
 </body>
 
 </html>
