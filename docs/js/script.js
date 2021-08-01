@@ -393,6 +393,7 @@ var scenetl7 = new ScrollMagic.Scene({
     var tl27 = new TimelineMax();
     var tl28 = new TimelineMax();
     var tlp28 = new TimelineMax();
+    var tlp29 = new TimelineMax();
     tl23.from(["#partn1"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
     tl24.from(["#partn2"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
     tl25.from(["#partn3"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
@@ -400,11 +401,18 @@ var scenetl7 = new ScrollMagic.Scene({
     tl27.from(["#partn5"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
     tl28.from(["#partn6"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
     tlp28.from(["#partn7"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
+    tlp29.from(["#partn8"],.5,{rotationY:150,opacity:0,ease:Power1.easeOut},0);
     var scene23 = new ScrollMagic.Scene({
         triggerElement: "#partn1",
         triggerHook: 0.8
     })
     .setTween(tl23)
+    .addTo(controller);
+    var scenetlp29 = new ScrollMagic.Scene({
+        triggerElement: "#partn8",
+        triggerHook: 0.8
+    })
+    .setTween(tlp29)
     .addTo(controller);
     var scenep28 = new ScrollMagic.Scene({
         triggerElement: "#partn7",
