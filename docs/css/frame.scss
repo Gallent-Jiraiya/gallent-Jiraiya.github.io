@@ -1,0 +1,163 @@
+html,body{
+    border: 0;
+    margin: 0;
+}
+body{
+    height: calc(100vh - 50px);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0 20px;
+    height: 100%;
+}
+#path  {
+    background-color: rgb(238, 238, 238);
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    p{
+        padding-left: 20px;
+        font-size: 14px;
+        margin: 0;
+    }
+}
+#cards{
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    #card1{
+        background-color: rgb(52, 122, 183);
+        border: 1px solid rgb(52, 122, 183);
+        border-radius: 5px;
+        color: #ddd;
+        .par{
+            color:rgb(52, 122, 183) ;
+        }
+    }#card2{
+        background-color: rgb(92, 216, 92);
+        border: 1px solid rgb(92, 216, 92);
+        border-radius: 5px;
+        color: #ddd;
+        .par{
+            color:rgb(92, 216, 92) ;
+        }
+    }#card3{
+        background-color: rgb(240, 173, 78);
+        border: 1px solid rgb(240, 173, 78);;
+        border-radius: 5px;
+        color: #ddd;
+        .par{
+            color:rgb(240, 173, 78); ;
+        }
+    }#card4{
+        background-color: rgb(217, 83, 79);
+        border: 1px solid rgb(217, 83, 79);
+        border-radius: 5px;
+        color: #ddd;
+        .par{
+            color:rgb(217, 83, 79) ;
+        }
+    }
+    .card{
+        width: 100%;
+        //background-color: aqua;
+        .det{
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            i{
+                font-size: 5em;
+                height: 100%;
+                //width: 50px;
+            }
+            div{
+                text-align: end;
+                
+            }
+            .hed{
+                font-size: 30px;
+            }
+        }
+        .btn-det{
+            padding: 10px;
+            
+            height: 20px;
+            background-color: rgb(255, 255, 255);
+            p{
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
+#form{
+    margin: 20px 0;
+    border: 1px solid rgb(204, 204, 204);
+    #form_title{
+        background-color: aliceblue;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(204, 204, 204);
+        p{
+            padding: 20px;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+    #form_body{
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        table,td,th{
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        table{
+            max-width: 100%;
+        }
+        .group{
+            //margin-top: 10px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            align-items: center;
+            label{
+               text-align: end;
+               font-size: 14px;
+               font-weight: 600;
+               margin-right: 20px;
+            }
+            p{
+                grid-column: 2;
+                font-size: 12px;
+                color: red;
+                line-height: 0;
+            }
+            input[type="text"],input[type="date"],input[type="submit"],input[type="number"],select,option{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                width: 60%;
+                height: 30px;
+                
+                
+            }
+            input[type="submit"]{
+                background-color: rgb(51, 122, 183);
+                border: 0;
+                border-radius: 3px;
+                color: white;
+            }
+            table{
+                padding: 0;
+                border-collapse: collapse;
+                label{
+                    padding: 10px;
+                    background-color: aqua;
+                }
+            }
+        }
+        
+    }
+}
