@@ -183,6 +183,11 @@ body{
 	margin-left: auto;
 	margin-right: auto;
   }
+  @media (max-width: 768px){
+	#final2021{
+	  width: 100%;
+	}
+  }
 }
 .tl-item1{
 	display:flex;
