@@ -3,18 +3,21 @@
     <head>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/lightslider.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/lightslider.js"></script>
     </head>
     <body>
 
     <div id="head_bar">
-        <img src="img/Carsons Logo white.png">
+    <a href="index.php"><img src="admin/img/Carsons Logo white.png"></a>
     </div>
     <div id="banner">
 
     </div>
-    <div id="search">
+    <div>
+        <form  id="search" action="search.php" method="post">
         <span>
         <label>Start Date</label>
         <input type="date" name="startDate">
@@ -24,6 +27,7 @@
         <input type="date" name="startDate">
         </span>
         <input type="submit" value="Check Available Vehicles">
+        </form>
     </div>
     <div id="about">
         <div id="abt_topic">
@@ -59,209 +63,85 @@
             Our Vehicles
         </div>
     <div id="vehicles">
-        <div id="crew">
+        <div id="cars">
                 <ul id="autoWidth" class="cs-hidden" style="height: auto; margin-bottom: 10px;">
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Heshan Nanayakkara.PNG" class="person">
-                            <div class="details">
-                                <h4>
-                                    Heshan Nanayakkara
-                                </h4>
-                                <p>Chief Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0779654083 
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:heshan.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/kalaru.heshan/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/heshan-nanayakkara/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
+                <?php
+                include ("dbConnection.php");
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+
+                    $sql = "SELECT * FROM vehicle";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                    // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            ?>
+                            <li class="item-a">
+                                <div class="box">
+                                    <img src="admin/img/Vehicles/<?php echo $row['picture'];?>" class="person">
+                                    <div class="details">
+                                        <h4>
+                                        <?php echo $row['brand'];?>
+                                        </h4>
+                                        <p><i class="fa fa-male"></i><?php echo $row['passengers'];?> Passengers  </p>
+                                        <p><i class="fa fa-cog"></i><?php echo $row['transmissionType'];?> Transmission</p>
+                                        <p><i class="far fa-snowflake"></i><?php echo $row['airCondition'];?> Air Conditioning</p>
+                                        <p><i class="fa fa-suitcase"></i><?php echo $row['Luggage'];?> Luggages</p>
+                                        <p><i class="fas fa-money-bill-alt"></i><?php echo $row['pricePerExtraKM'];?> LKR per Extra Km</p>
+                                        <p><i class="fa fa-road"></i>Free Mileage:<?php echo $row['freeMilage'];?> Km</p>                                
+                                    </div>
                                 </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Heshan Nanayakkara.PNG" class="person">
-                            <div class="details">
-                                <h4>
-                                    Heshan Nanayakkara
-                                </h4>
-                                <p>Chief Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0779654083 
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:heshan.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/kalaru.heshan/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/heshan-nanayakkara/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Heshan Nanayakkara.PNG" class="person">
-                            <div class="details">
-                                <h4>
-                                    Heshan Nanayakkara
-                                </h4>
-                                <p>Chief Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0779654083 
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:heshan.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/kalaru.heshan/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/heshan-nanayakkara/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Heshan Nanayakkara.PNG" class="person">
-                            <div class="details">
-                                <h4>
-                                    Heshan Nanayakkara
-                                </h4>
-                                <p>Chief Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0779654083 
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:heshan.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/kalaru.heshan/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/heshan-nanayakkara/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Shalani_Wijesinghe_CN.png" class="person">
-                            <div class="details">
-                                <h4>
-                                    Shalani Wijesinghe
-                                </h4>
-                                <p>Chief Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0763040923
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:shalani.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/profile.php?id=100057910201066" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/shalani-wijesinghe-5655821b2/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Sithum.jpg" class="person">
-                            <div class="details">
-                                <h4>
-                                    Sithum Basnayaka
-                                </h4>
-                                <p>Marketing Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0766108500
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:sithum.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/nowty.sithum.9" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="white" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/sithum-basnayaka/" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
-                    <li class="item-a">
-                        <div class="box">
-                            <img src="img/team/Kishan.jpg" class="person">
-                            <div class="details">
-                                <h4>
-                                    Kishan Paramanayagam 
-                                </h4>
-                                <p>Sponsorship Coordinator
-                                    <br>
-                                     hackX 2021
-                                     <br>
-                                     0772081326
-                                </p>
-                                <div class="links">
-                                    <a href="mailto:kishan.hackx@gmail.com" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg>
-                                    </a>
-                                    <a href="https://www.facebook.com/kishan.paramanayagam" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" class="svg-inline--fa fa-facebook-f fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="white" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/kishan-paramanayagam" target="_blank">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" class="svg-inline--fa fa-linkedin-in fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                         </div>
-                    </li>
+                            </li>
+                    <?php
+                        }
+                    } 
+                    else {
+                    echo "0 results";
+                    }
+                    $conn->close();
+                    ?>
                     
                 </ul>
             
         </div>
+    </div>
+    <div id="footer">
+        <div class="contact">
+            <h2>Contact Us</h2>
+            Casons Rent-A-Car (Pvt) Ltd
+            <br>181, Gothami Gardens, Gothami Road,<br> Rajagiriya, Sri Lanka.
 
+            <br><br>Hotlines:
+            <br>+94 11 4 377 366
+            <br>+94 777 312 500
+
+            <br><br>Fax:
+            <br>+94 11 4 406 544
+
+            <br><br>Email:
+            <br>info@casonsrentacar.com
+        </div>
+        <div class="contact">
+            <h2>Vehicle Fleet</h2>
+            Cars
+            <br><br>SUVs
+
+            <br><br>Vans & Busses
+            <br><br>Utility Vehicles & Lorries
+            <br><br>Motorbikes
+
+            <br><br>Tuk Tuks
+         
+        </div>
+
+        <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63492.94592206908!2d80.51572826335031!3d5.952076466173329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae138d151937cd9%3A0x1d711f45897009a3!2sMatara!5e0!3m2!1sen!2slk!4v1629634461135!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <div id="copyright">
+    Copyright © 2021 Carsons Rent-A-Car (Pvt) Ltd. . All Rights Reserved.
     </div>
     </body>
 </html>
